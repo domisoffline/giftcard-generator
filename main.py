@@ -10,12 +10,11 @@ import threading
 system("title "+"Spilled Giftcard Gen")
 password = input("Please enter Password:\n")
 numofcodes = 0
+thread = 1
 if password != 'Spilled':
     print("Password is incorrect.")
     time.sleep(2)
 else:
-
-
     print("Codes.txt will be cleared if you continue.")
     with open('codes.txt', 'w+') as f:
         f.truncate()
@@ -79,8 +78,7 @@ else:
             numofcodes = numofcodes+1
             system("title "+f"Spilled Giftcard Gen l Codes: {numofcodes} l Developed By Spilled")
 
-    t1 = threading.Thread(target=codecreation)
-    t2 = threading.Thread(target=codecreation)
-
-    t1.start()
-    t2.start()
+    for i in range(200):
+        thread = threading.Thread(target=codecreation)
+    for i in range(200):
+        thread.start()
